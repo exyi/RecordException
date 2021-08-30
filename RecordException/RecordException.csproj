@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+
+    <PackageId>RecordException</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>exyi</Authors>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/exyi/RecordException.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/exyi/RecordException</PackageProjectUrl>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fody" Version="6.5.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+
+    <WeaverFiles
+      Include="../RecordHacker.Fody/bin/$(Configuration)/netstandard2.0/RecordHacker.Fody.dll" />
+
+
+    <None Include="../LICENSE" Pack="true" PackagePath=""/>
+
+  </ItemGroup>
+
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <DefineConstants>$(DefineConstants);CSharp8Polyfill;INTERNAL_NULLABLE_ATTRIBUTES</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RecordHacker.Fody\RecordHacker.Fody.csproj">
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
+  </ItemGroup>
+
+</Project>
