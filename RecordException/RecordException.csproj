@@ -6,12 +6,22 @@
     <LangVersion>latest</LangVersion>
 
     <PackageId>RecordException</PackageId>
-    <Version>0.1.0</Version>
-    <Authors>exyi</Authors>
+    <Version>0.1.2</Version>
+    <Authors>Standa Lukeš</Authors>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/exyi/RecordException.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://github.com/exyi/RecordException</PackageProjectUrl>
+
+    <PackageTags>record;exception;hack</PackageTags>
+    <Description>Simple package which allows C# records to inherit from Exception through the RecordException type.</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
+    <AssemblyOriginatorKeyFile>dotvvmwizard.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <PublicSign>true</PublicSign>
+
+    <PackageReadmeFile>README.md</PackageReadmeFile>
 
   </PropertyGroup>
 
@@ -26,6 +36,7 @@
 
 
     <None Include="../LICENSE" Pack="true" PackagePath=""/>
+    <None Include="../README.md" Pack="true" PackagePath=""/>
 
   </ItemGroup>
 

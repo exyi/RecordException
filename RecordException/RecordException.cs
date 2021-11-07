@@ -11,9 +11,12 @@ public abstract class RecordException : Exception, IEquatable<RecordException>
 
     private string? Msg { get; init; }
 
-    public RecordException(string? msg = null, Exception? InnerException = null): base(msg, InnerException)
+    public RecordException(string? msg, Exception? InnerException = null): base(msg, InnerException)
     {
         this.Msg = msg;
+    }
+    public RecordException(Exception? InnerException = null): base(null, InnerException)
+    {
     }
 
     public string GenerateRecordMessage()

@@ -6,11 +6,12 @@ namespace Something.Test
 {
 
     // public record MissingIdException(int id): ExceptionRecords.RecordException($"Id {id} is missing") { }
-    public record MissingIdException(int id): RecordExceptions.RecordException
+    public record MissingIdException(int id): RecordException
     {
         public override string Message => $"Id {id} is missing";
     }
-    public record MissingIdException2(int id): RecordExceptions.RecordException;
+    public record MissingIdException2(int id): RecordException;
+    public record SomethingBad(Exception InnerException): RecordException(InnerException);
     public class UnitTest1
     {
         [Fact]
